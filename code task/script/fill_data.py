@@ -3,10 +3,11 @@ Main code file
 """
 from data import DataBase
 
-PHRASE = "Hello world!"
 db = DataBase()
+files = []
 
 if __name__ == "main":
     print(db)
-    print(PHRASE)
+    for file in files:
+        pass
     
