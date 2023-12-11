@@ -9,5 +9,5 @@ if __name__ == "__main__":
     #db = DataBase()
 
     app = App()
-    app.run()
+    app.run("desktop")
     

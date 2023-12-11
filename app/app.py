@@ -24,12 +24,16 @@ class App:
         # ---App Settings---
         page.title = APP_TITLE
         page.bgcolor = BACKGROUND_COLOR
+        page.window_resizable = False
+        page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+        page.vertical_alignment = ft.CrossAxisAlignment.CENTER 
         page.update()
 
         # -----App body-----
 
-        body = Body()
+        body = Body(page)
         page.add(body)
+        page.update()
 
     def run(self, view_mode: str = "web"):
         """_summary_

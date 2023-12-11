@@ -7,7 +7,8 @@ import flet as ft
 VIEW_MODE = {
     "desktop": ft.AppView.FLET_APP,
     "browser": ft.AppView.WEB_BROWSER,
-    "web": ft.AppView.FLET_APP_WEB
+    "web": ft.AppView.FLET_APP_WEB,
+    "hidden": ft.AppView.FLET_APP_HIDDEN
 }
 
 APP_TITLE = "GAI EDUCATION APP"
