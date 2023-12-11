@@ -17,16 +17,18 @@ from .components import (
 class App:
     """_summary_
     """
+
     def __page(self, page: ft.Page):
         """
         Defines the type of main page
         """
+
         # ---App Settings---
         page.title = APP_TITLE
         page.bgcolor = BACKGROUND_COLOR
         page.window_resizable = False
         page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-        page.vertical_alignment = ft.CrossAxisAlignment.CENTER 
+        page.vertical_alignment = ft.CrossAxisAlignment.CENTER
         page.update()
 
         # -----App body-----
