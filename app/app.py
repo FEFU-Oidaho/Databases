@@ -17,7 +17,7 @@ from .components import (
 class App:
     """_summary_
     """
-    def page(self, page: ft.Page):
+    def __page(self, page: ft.Page):
         """
         Defines the type of main page
         """
@@ -31,7 +31,7 @@ class App:
 
         # -----App body-----
 
-        body = Body(page)
+        body = Body()
         page.add(body)
         page.update()
 
@@ -42,7 +42,7 @@ class App:
             view_mode (str, optional): _description_. Defaults to "web".
         """
         ft.app(
-            target=self.page,
+            target=self.__page,
             view=VIEW_MODE[view_mode],
             port=APP_PORT
         )
