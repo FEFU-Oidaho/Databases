@@ -105,7 +105,7 @@ class RoleSelector(ft.UserControl):
                     text="Инспектор"
                 ),
                 ft.Tab(
-                    icon=ft.icons.PERSON_3,
+                    icon=ft.icons.PERSON_4,
                     text="Оператор"
                 ),
             ],
