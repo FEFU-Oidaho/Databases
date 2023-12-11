@@ -3,7 +3,7 @@ App main file
 """
 
 import flet as ft
-from .config import (
+from.config import (
     VIEW_MODE,
     BACKGROUND_COLOR,
     APP_TITLE,

@@ -1,7 +1,7 @@
 """
 Main code file
 """
-from data import DataBase
+from .data import DataBase
 
 db = DataBase()
 
