@@ -2,7 +2,7 @@
 Main body componets file
 """
 import flet as ft
-from .config import (
+from config import (
     ELEMENT_COLOR,
 )
 

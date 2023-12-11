@@ -2,11 +2,10 @@
 Main code file
 """
 #from data import DataBase
-from .app import App
+from app import App
 
 
-
-if __name__ == "main":
+if __name__ == "__main__":
     #db = DataBase()
 
     app = App()
