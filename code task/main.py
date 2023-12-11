@@ -1,12 +1,12 @@
 """
 Main code file
 """
-from data import DataBase
+# from data import DataBase
+from .app import App
 
-PHRASE = "Hello world!"
-db = DataBase()
 
 if __name__ == "main":
-    print(db)
-    print(PHRASE)
-    
+    # db = DataBase()
+
+    app = App()
+    app.run()
