@@ -1,12 +1,14 @@
 """
 Main code file
 """
-# from data import DataBase
+#from data import DataBase
 from .app import App
 
 
+
 if __name__ == "main":
-    # db = DataBase()
+    #db = DataBase()
 
     app = App()
     app.run()
+    
