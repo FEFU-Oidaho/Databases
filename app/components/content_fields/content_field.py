@@ -5,6 +5,7 @@ Returns:
 """
 
 import flet as ft
+from data import DataBase
 from config import (
     ACCENT_COLOR,
     BACKGROUND_COLOR
@@ -24,6 +25,7 @@ class ContentField(ft.UserControl):
         self.id_label = None
 
         self.input_field = None
+        self.content_field = None
 
         self.need_login = None
 
@@ -55,12 +57,15 @@ class ContentField(ft.UserControl):
 
         return container
 
-    def id_given(self, status):
+    def id_given(self):
         """_summary_
 
         Args:
             status (_type_): _description_
         """
+ 
+        self.input_field.visible = False
+        super().update()
 
 
 class InputField(ft.UserControl):
@@ -74,6 +79,7 @@ class InputField(ft.UserControl):
         super().__init__()
         self.id_label = id_label
         self.id_given_func = id_given_func
+        self.db = DataBase()
 
         self.text_input = None
         self.button_input = None
@@ -112,6 +118,9 @@ class InputField(ft.UserControl):
         self.text_input.value = ""
         super().update()
 
-        # TODO: database request
+        result = self.db.drivers.select(
+            license_number=value
+        )
 
-        self.id_given_func(value)
+        if result:
+            self.id_given_func()

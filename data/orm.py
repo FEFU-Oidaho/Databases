@@ -154,7 +154,7 @@ class BaseTable:
 
         query += ";"
 
-        self.cur.execute('USE toaster;')
+        self.cur.execute('USE GAI_EDU;')
         self.cur.execute(query)
         result = self.cur.fetchall()
         logging.debug("Query: %s", query)
@@ -190,7 +190,7 @@ class BaseTable:
 
         query += ";"
 
-        self.cur.execute('USE toaster;')
+        self.cur.execute('USE GAI_EDU;')
         self.cur.execute(query)
         logging.debug("Query: %s", query)
         logging.debug("Result: executed")
@@ -227,7 +227,7 @@ class BaseTable:
 
         query += ";"
 
-        self.cur.execute('USE toaster;')
+        self.cur.execute('USE GAI_EDU;')
         self.cur.execute(query)
         logging.debug("Query: %s", query)
         logging.debug("Result: executed")
@@ -256,7 +256,7 @@ class BaseTable:
 
         query += ";"
 
-        self.cur.execute('USE toaster;')
+        self.cur.execute('USE GAI_EDU;')
         self.cur.execute(query)
         logging.debug("Query: %s", query)
         logging.debug("Result: executed")
