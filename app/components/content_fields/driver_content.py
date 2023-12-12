@@ -4,10 +4,10 @@ Returns:
     _type_: _description_
 """
 
-import flet as ft
+from .content_field import ContentField
 
 
-class DriverContent(ft.UserControl):
+class DriverContent(ContentField):
     """_summary_
 
     Args:
@@ -17,6 +17,5 @@ class DriverContent(ft.UserControl):
     def __init__(self):
         super().__init__()
         self.id = "Водитель"
-
-    def build(self):
-        return ft.Text(value=self.id)
+        self.id_label = "Водительское удостоверение"
+        

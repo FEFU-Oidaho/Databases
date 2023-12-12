@@ -4,10 +4,9 @@ Returns:
     _type_: _description_
 """
 
-import flet as ft
+from .content_field import ContentField
 
-
-class OperatorContent(ft.UserControl):
+class OperatorContent(ContentField):
     """_summary_
 
     Args:
@@ -17,6 +16,4 @@ class OperatorContent(ft.UserControl):
     def __init__(self):
         super().__init__()
         self.id = "Оператор"
-
-    def build(self):
-        return ft.Text(value=self.id)
+        self.id_label = "Удостоверение оператора"
