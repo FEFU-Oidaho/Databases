@@ -6,6 +6,7 @@ Returns:
 
 from .content_field import ContentField
 
+
 class InspectorContent(ContentField):
     """_summary_
 
@@ -13,8 +14,9 @@ class InspectorContent(ContentField):
         ContentField (_type_): _description_
     """
 
-    def __init__(self):
+    def __init__(self, need_login: bool = True):
         super().__init__()
         self.id = "Инспектор"
         self.id_label = "Удостоверение инспектора"
 
+        self.need_login = need_login

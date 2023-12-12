@@ -46,10 +46,10 @@ class Connection:
     def __init__(self, allow_debug_text=True):
         try:
             self._connection = MySQLdb.connect(
-                host=os.getenv("POLYGON_SQL_HOST"),
-                port=int(os.getenv("POLYGON_SQL_PORT")),
-                user=os.getenv("POLYGON_SQL_USER"),
-                password=os.getenv("POLYGON_SQL_PASSWORD")
+                host=os.getenv("GAI_EDU_SQL_HOST"),
+                port=int(os.getenv("GAI_EDU_SQL_PORT")),
+                user=os.getenv("GAI_EDU_SQL_USER"),
+                password=os.getenv("GAI_EDU_SQL_PASSWORD")
             )
             self._connection.autocommit(True)
             self._cursor = self._connection.cursor()

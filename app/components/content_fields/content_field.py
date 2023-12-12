@@ -23,9 +23,19 @@ class ContentField(ft.UserControl):
         self.id = None
         self.id_label = None
 
+        self.input_field = None
+
+        self.need_login = None
+
     def build(self):
+        self.input_field = InputField(
+            self.id_label,
+            id_given_func=self.id_given,
+        )
+        self.input_field.visible = self.need_login
+
         controls = [
-            InputField(self.id_label),
+            self.input_field,
         ]
 
         content = ft.Column(
@@ -45,6 +55,13 @@ class ContentField(ft.UserControl):
 
         return container
 
+    def id_given(self, status):
+        """_summary_
+
+        Args:
+            status (_type_): _description_
+        """
+
 
 class InputField(ft.UserControl):
     """_summary_
@@ -53,9 +70,11 @@ class InputField(ft.UserControl):
         ft (_type_): _description_
     """
 
-    def __init__(self, id_label):
+    def __init__(self, id_label, id_given_func):
         super().__init__()
         self.id_label = id_label
+        self.id_given_func = id_given_func
+
         self.text_input = None
         self.button_input = None
 
@@ -83,7 +102,7 @@ class InputField(ft.UserControl):
 
         return content
 
-    def on_click(self, e): # pylint: disable=unused-argument
+    def on_click(self, e):  # pylint: disable=unused-argument
         """_summary_
         """
         if not self.text_input.value:
@@ -93,4 +112,6 @@ class InputField(ft.UserControl):
         self.text_input.value = ""
         super().update()
 
-        print(value)
+        # TODO: database request
+
+        self.id_given_func(value)

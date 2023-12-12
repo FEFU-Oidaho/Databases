@@ -25,9 +25,9 @@ class Body(ft.UserControl):
             on_change=self.on_role_changed
         )
 
-        self.driver_content = DriverContent()
-        self.inspector_cointent = InspectorContent()
-        self.operator_content = OperatorContent()
+        self.driver_content = DriverContent(need_login=True)
+        self.inspector_cointent = InspectorContent(need_login=False)
+        self.operator_content = OperatorContent(need_login=False)
 
         self.driver_content.visible = True
         self.inspector_cointent.visible = False

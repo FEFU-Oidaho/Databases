@@ -14,8 +14,9 @@ class DriverContent(ContentField):
         ContentField (_type_): _description_
     """
 
-    def __init__(self):
+    def __init__(self, need_login: bool = True):
         super().__init__()
         self.id = "Водитель"
         self.id_label = "Водительское удостоверение"
-        
+
+        self.need_login = need_login

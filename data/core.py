@@ -5,11 +5,11 @@ This file describes the main queries that form the structure of the database.
 DRIVERS = """
 CREATE TABLE IF NOT EXISTS drivers
     (
-        license_number INTEGER PRIMARY KEY NOT NULL,
+        license_number INTEGER PRIMARY KEY NOT NULL UNIQUE,
 
         full_name VARCHAR(255),
         address TEXT,
-        phone_number INTEGER,
+        phone_number INTEGER UNIQUE,
         
         CONSTRAINT driver UNIQUE (license_number, phone_number)
     );
