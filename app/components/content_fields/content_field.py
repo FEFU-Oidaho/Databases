@@ -52,21 +52,28 @@ class InputField(ft.UserControl):
     Args:
         ft (_type_): _description_
     """
+
     def __init__(self, id_label):
         super().__init__()
         self.id_label = id_label
+        self.text_input = None
+        self.button_input = None
 
     def build(self):
+        self.text_input = ft.TextField(
+            label=self.id_label,
+            border_color="white",
+        )
+        self.button_input = ft.IconButton(
+            icon=ft.icons.CHECK,
+            icon_size=40,
+            on_click=self.on_click,
+            bgcolor=ACCENT_COLOR
+        )
+
         controls = [
-            ft.TextField(
-                label=self.id_label
-            ),
-            ft.IconButton(
-                icon=ft.icons.CHECK,
-                icon_size=40,
-                on_click=None,
-                bgcolor=ACCENT_COLOR
-            )
+            self.text_input,
+            self.button_input
         ]
 
         content = ft.Row(
@@ -75,3 +82,15 @@ class InputField(ft.UserControl):
         )
 
         return content
+
+    def on_click(self, e): # pylint: disable=unused-argument
+        """_summary_
+        """
+        if not self.text_input.value:
+            return
+
+        value = self.text_input.value
+        self.text_input.value = ""
+        super().update()
+
+        print(value)
