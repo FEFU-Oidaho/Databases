@@ -1,13 +1,10 @@
 """
 Main code file
 """
-#from data import DataBase
-from app import App
+from data import DataBase
 
 
-if __name__ == "__main__":
-    #db = DataBase()
+db = DataBase()
 
-    app = App()
-    app.run("desktop")
-    
+if __name__ == "__mani__":
+    print("Hello Wordl!")
