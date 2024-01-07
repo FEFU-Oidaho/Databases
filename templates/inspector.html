@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='styles/main.css')}}">
-    <title>Приложение</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='styles/inspector.css')}}">
+    <title>Инспектор</title>
 </head>
 <body>
 
@@ -12,7 +12,7 @@
         <div class="content-container">
             <ul class="nav-menu">
                 {% for element in menu %}
-                    {% if element.url == "home" %}    
+                    {% if element.url == "inspector" %}    
                         <li class="nav-menu-element"> <a class="nav-menu-selected" href="{{element.url}}"> {{element.name}} </a> </li>
                     {% else %}
                         <li class="nav-menu-element"> <a class="nav-menu-link" href="{{element.url}}"> {{element.name}} </a> </li>
