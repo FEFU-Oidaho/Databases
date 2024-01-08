@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='styles/style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='styles/administrator.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='styles/driver.css')}}">
     <title>Приложение</title>
 </head>
 <body>
@@ -26,7 +26,7 @@
     
                 <div class="nav-menu">
                     {% for element in menu %}
-                        {% if element.url == "administrator" %}
+                        {% if element.url == "driver" %}
                             <div class="nav-menu-element nav-menu-element-active">
                                 <a href="{{element.url}}">
                                     {{element.name}}
