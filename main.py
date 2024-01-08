@@ -12,12 +12,11 @@ from flask import (
 
 app = Flask(__name__)
 
-\
+
 menu = [
-    {"name": "Главная", "url": "home"},
-    {"name": "Приложение водителя", "url": "driver"},
-    {"name": "Приложение инспектора", "url": "inspector"},
-    {"name": "Приложение администратора", "url": "administrator"},
+    {"name": "Водитель", "url": "driver"},
+    {"name": "Инспектор", "url": "inspector"},
+    {"name": "Администратор", "url": "administrator"},
 ]
 
 @app.route("/")
@@ -27,7 +26,7 @@ def redirect_to_main():
 
 @app.route("/home")
 def show_homepage():
-    main_path = "main.html"
+    main_path = "home.html"
     return render_template(
         main_path,
         menu=menu

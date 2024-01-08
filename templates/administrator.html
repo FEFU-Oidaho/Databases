@@ -3,32 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='styles/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='styles/administrator.css')}}">
-    <title>Администратор</title>
+    <title>Приложение</title>
 </head>
 <body>
 
     <header>
         <div class="content-container">
-            <ul class="nav-menu">
-                {% for element in menu %}
-                    {% if element.url == "administrator" %}    
-                        <li class="nav-menu-element"> <a class="nav-menu-selected" href="{{element.url}}"> {{element.name}} </a> </li>
-                    {% else %}
-                        <li class="nav-menu-element"> <a class="nav-menu-link" href="{{element.url}}"> {{element.name}} </a> </li>
-                    {% endif %}   
-                {% endfor %}
-            </ul>
+            <div class="nav">
+                <div class="nav-home">
+                    <div class="nav-home-ico">
+                        <img src="{{ url_for( 'static', filename='images/home_ico_2.png')}}">
+                    </div>
+
+                    <div class="nav-home-text">
+                        <a href="home">
+                            Главная
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="nav-menu">
+                    {% for element in menu %}
+                        {% if element.url == "administrator" %}
+                            <div class="nav-menu-element nav-menu-element-active">
+                                <a href="{{element.url}}">
+                                    {{element.name}}
+                                </a>
+                            </div>
+                        {% else %}
+                            <div class="nav-menu-element">
+                                <a href="{{element.url}}">
+                                    {{element.name}}
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </header>
 
     <article> 
         <div class="content-container">
+
         </div>
     </article>
 
     <footer>
         <div class="content-container">
+            <div class="footer-info">
+                Подготовленно в рамках курсового проекта. <br>
+                Дисциплина: "Проектирование и разработка БД" <br>
+                Студент: Башинский Р.А. <br>
+                Группа: Б9121-09.03.04(4)
+            </div>
         </div>
     </footer>
     
