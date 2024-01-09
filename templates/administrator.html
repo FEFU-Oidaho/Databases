@@ -26,7 +26,7 @@
     
                 <div class="nav-menu">
                     {% for element in menu %}
-                        {% if element.url == "administrator" %}
+                        {% if element.url == "/login/administrator" %}
                             <div class="nav-menu-element nav-menu-element-active">
                                 <a href="{{element.url}}">
                                     {{element.name}}
@@ -47,7 +47,30 @@
 
     <article> 
         <div class="content-container">
+            <div class="display-content">
 
+                <div class="display-fines">
+                    <div class="fines-viewport">
+
+                    </div>
+                    
+                </div>
+
+                <div class="display-edit">
+                    <div class="edit-viewport">
+                        
+                    </div>
+
+                </div>
+
+                <div class="display-delete">
+                    <div class="delete-viewport">
+                        
+                    </div>
+
+                </div>
+                
+            </div>
         </div>
     </article>
 

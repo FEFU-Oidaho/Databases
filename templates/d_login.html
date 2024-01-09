@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='styles/style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='styles/driver.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='styles/login.css')}}">
     <title>Приложение</title>
 </head>
 <body>
@@ -26,7 +26,7 @@
     
                 <div class="nav-menu">
                     {% for element in menu %}
-                        {% if element.url == "driver" %}
+                        {% if element.url == "/login/driver" %}
                             <div class="nav-menu-element nav-menu-element-active">
                                 <a href="{{element.url}}">
                                     {{element.name}}
@@ -47,7 +47,15 @@
 
     <article> 
         <div class="content-container">
-
+            <div class="display-login">
+                <form method="post" class="login-viewport">
+                    <div class="login-label">
+                        Номер лицензии
+                    </div>
+                    <input type="text" name="license_number" required pattern="[0-9]+">
+                    <button type="submit"> Войти </button>   
+                </form>
+            <div>
         </div>
     </article>
 

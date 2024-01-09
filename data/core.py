@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS drivers
 
         full_name VARCHAR(255),
         address TEXT,
-        phone_number INTEGER UNIQUE,
+        phone_number BIGINT UNIQUE,
         
         CONSTRAINT driver UNIQUE (license_number, phone_number)
     );

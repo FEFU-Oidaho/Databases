@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="nav-home-text">
-                        <a href="home">
+                        <a href="/home">
                             Главная
                         </a>
                     </div>
@@ -26,7 +26,7 @@
     
                 <div class="nav-menu">
                     {% for element in menu %}
-                        {% if element.url == "driver" %}
+                        {% if element.url == "/login/driver" %}
                             <div class="nav-menu-element nav-menu-element-active">
                                 <a href="{{element.url}}">
                                     {{element.name}}
@@ -49,17 +49,25 @@
         <div class="content-container">
             <div class="display-content">
                 <div class="display-fines">
-                    <div class="cars-viewport">
+                    <div class="fines-viewport">
+                        <div class="viewport-title">
+                            {{payload.driver_name}}
+                        </div>
+                        <div class="viewport-feed">
 
+                        </div>
                     </div>
-                    
                 </div>
 
                 <div class="display-cars">
-                    <div class="fines-viewport">
-                        
-                    </div>
+                    <div class="cars-viewport">
+                        <div class="viewport-title">
+                            Машины
+                        </div>
+                        <div class="viewport-feed">
 
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
