@@ -86,12 +86,48 @@ def handle_driver_login():
     if drivers:
         global payload
 
+        driver_cars = database.cars.select(owner_license=license_number)
+        driver_fines = database.fine.select(driver_license=license_number)
+
+        cars = []
+        fines = []
+
+        for car in driver_cars:
+            cars.append(
+                {
+                    "registration_number": car[0],
+                    "car_brand": car[1],
+                    "car_model": car[2],
+                    "car_color": car[3],
+                    "manufactured_year": car[4],
+                    "registration_date": car[5],
+                    "owner_license": car[6],
+                }
+            )
+
+        for fines in driver_fines:
+            fines.append(
+                {
+                    "id": fines[0],
+                    "violation_code": fines[1],
+                    "driver_license": fines[2],
+                    "inspector_number": fines[3],
+                    "date": fines[4],
+                    "time": fines[5],
+                    "area": fines[6],
+                    "payment_state": fines[7],
+                    "payment_size": fines[8],
+                    "deprivation_size": fines[9],
+                }
+            )
+
         payload = {
             "last_login_data": drivers[0][0],
             "driver_name": drivers[0][1],
             "driver_address": drivers[0][2],
             "driver_phone": drivers[0][3],
-            "driver_cars": {},
+            "driver_cars": cars,
+            "driver_fines": fines,
         }
 
         return redirect("/role/driver")

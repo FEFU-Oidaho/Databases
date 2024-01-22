@@ -54,35 +54,25 @@
                             {{payload.driver_name}}
                         </div>
                         <div class="viewport-feed">
-                            <div class="fine-element">
-                                <div class="header">
-                                    Штраф: 01.01.1997
+                            {% for fine in payload.driver_fines %}
+                                <div class="fine-element">
+                                    <div class="header">
+                                        Штраф: {{fine.date}}
+                                    </div>
+                                    <div class="violation">
+                                        Код нарушения: {{fine.violation_code}}
+                                    </div>
+                                    <div class="inspector">
+                                        Инспектор: {{fine.inspector_number}}
+                                    </div>
+                                    <div class="payment">
+                                        К оплате: {{fine.payment_size}} руб.
+                                    </div>
+                                    <div class="status">
+                                        Оплата: {{fine.payment_state}}
+                                    </div>
                                 </div>
-                                <div class="violation">
-                                    Код нарушения: 157
-                                </div>
-                                <div class="inspector">
-                                    Инспектор: 124511249
-                                </div>
-                                <div class="payment">
-                                    К оплате: 273 руб.
-                                </div>
-                                <div class="status">
-                                    Не оплачено.
-                                </div>
-                            </div>
-                            <div class="fine-element"></div>
-                            <div class="fine-element"></div>
-                            <div class="fine-element"></div>
-                            <div class="fine-element"></div>
-                            <div class="fine-element"></div>
-                            <div class="fine-element"></div>
-                            <div class="fine-element"></div>
-                            <div class="fine-element"></div>
-                            <div class="fine-element"></div>
-                            <div class="fine-element"></div>
-                            <div class="fine-element"></div>
-                            <div class="fine-element"></div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -93,7 +83,28 @@
                             Машины
                         </div>
                         <div class="viewport-feed">
-                            <div class="car-element"></div>
+                            {% for car in payload.driver_car %}
+                                <div class="car-element">
+                                    <div class="registration-number">
+                                        Номер: {{car.registration_number}}
+                                    </div>
+                                    <div class="registration-date">
+                                        Регистрация: {{car.registration_date}}
+                                    </div>
+                                    <div class="brand">
+                                        Марка: {{car.car_brand}}
+                                    </div>
+                                    <div class="model">
+                                        Модель: {{car.car_model}}
+                                    </div>
+                                    <div class="color">
+                                        Цвет: {{car.car_color}}
+                                    </div>
+                                    <div class="year">
+                                        Год: {{car.manufactured_year}}
+                                    </div>
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
