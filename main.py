@@ -88,7 +88,7 @@ def handle_driver_login():
 
         driver_cars = database.cars.select(owner_license=license_number)
         driver_fines = database.fine.select(driver_license=license_number)
-
+        
         cars = []
         fines = []
 
@@ -105,19 +105,19 @@ def handle_driver_login():
                 }
             )
 
-        for fines in driver_fines:
+        for fine in driver_fines:
             fines.append(
                 {
-                    "id": fines[0],
-                    "violation_code": fines[1],
-                    "driver_license": fines[2],
-                    "inspector_number": fines[3],
-                    "date": fines[4],
-                    "time": fines[5],
-                    "area": fines[6],
-                    "payment_state": fines[7],
-                    "payment_size": fines[8],
-                    "deprivation_size": fines[9],
+                    "id": fine[0],
+                    "violation_code": fine[1],
+                    "driver_license": fine[2],
+                    "inspector_number": fine[3],
+                    "date": fine[4],
+                    "time": fine[5],
+                    "area": fine[6],
+                    "payment_state": "Оплачено" if fine[7] else "Не оплачено",
+                    "payment_size": fine[8],
+                    "deprivation_size": fine[9],
                 }
             )
 
