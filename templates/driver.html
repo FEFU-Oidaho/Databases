@@ -57,7 +57,7 @@
                             {% for fine in payload.driver_fines %}
                                 <div class="fine-element">
                                     <div class="header">
-                                        Штраф: {{fine.date}}
+                                        Штраф: {{fine.date}} {{fine.time}}
                                     </div>
                                     <div class="violation">
                                         Код нарушения: {{fine.violation_code}}
