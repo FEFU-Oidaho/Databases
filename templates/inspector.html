@@ -48,19 +48,57 @@
     <article> 
         <div class="content-container">
             <div class="display-content">
+
                 <div class="display-fines">
                     <div class="fines-viewport">
-
+                        <div calss="viewport-title">
+                            Инспектор: {{payload.last_login_data}}
+                        </div>
+                        <div class="viewport-feed">
+                            {% for fine in payload.all_fines %}
+                            <div class="fine-element">
+                                <div class="header">
+                                    Штраф: {{fine.date}} {{fine.time}}
+                                </div>
+                                <div class="violation">
+                                    Код нарушения: {{fine.violation_code}}
+                                </div>
+                                <div class="inspector">
+                                    Водитель: {{fine.driver_license}}
+                                </div>
+                                <div class="payment">
+                                    id записи: {{fine.id}}
+                                </div>
+                                <div class="status">
+                                    Оплата: {{fine.payment_state}}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
-                    
                 </div>
 
                 <div class="display-add">
                     <div class="add-viewport">
-                        
+                        <div calss="viewport-title">
+                            Добавить
+                        </div>
+                        <form method="post">
+                            <label>
+                                Лицензия водителя
+                                <input type="text" name="add_violation_driver_license" pattern="[0-9]+">
+                            </label>
+                            <br>
+                            <label>
+                                ID нарушения
+                                <input type="text" name="add_violation_code" pattern="[0-2]+">
+                            </label>
+                            <br>
+                            <button type="submit"> Добавить </button> 
+                        </form>
                     </div>
-
                 </div>
+                
             </div>
         </div>
     </article>

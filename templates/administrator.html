@@ -51,21 +51,71 @@
 
                 <div class="display-fines">
                     <div class="fines-viewport">
-
+                        <div calss="viewport-title">
+                            Администратор: {{payload.last_login_data}}
+                        </div>
+                        <div class="viewport-feed">
+                            {% for fine in payload.all_fines %}
+                            <div class="fine-element">
+                                <div class="header">
+                                    Штраф: {{fine.date}} {{fine.time}}
+                                </div>
+                                <div class="violation">
+                                    Код нарушения: {{fine.violation_code}}
+                                </div>
+                                <div class="inspector">
+                                    Водитель: {{fine.driver_license}}
+                                </div>
+                                <div class="payment">
+                                    id записи: {{fine.id}}
+                                </div>
+                                <div class="status">
+                                    Оплата: {{fine.payment_state}}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>    
                     </div>
                     
                 </div>
 
                 <div class="display-edit">
                     <div class="edit-viewport">
-                        
+                        <div calss="viewport-title">
+                            Изменить
+                        </div>
+                        <form method="post">
+                            <label>
+                                ID записи
+                                <input type="text" name="edit_violation_id" pattern="[0-9]+">
+                            </label>
+                            <br>
+                            <label>
+                                Новый статус записи
+                                <input type="text" name="edit_violation_status" pattern="[0-1]+">
+                            </label>
+                            <br>
+                            <button type="submit"> Изменить </button>  
+                            <input type="hidden" name="action" value="edit">
+                        </form>
                     </div>
 
                 </div>
 
                 <div class="display-delete">
                     <div class="delete-viewport">
-                        
+                        <div calss="viewport-title">
+                            Удалить
+                        </div>
+                        <form method="post">
+                            <label>
+                                ID записи
+                                <input type="text" name="delete_violation_id" pattern="[0-9]+">
+                            </label>
+                            <br>
+                            <button type="submit"> Удалить </button>  
+                            <input type="hidden" name="action" value="delete">
+                        </form>
                     </div>
 
                 </div>
