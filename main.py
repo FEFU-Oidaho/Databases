@@ -223,8 +223,6 @@ def handle_administrator_login():
     abort(404)
 
 # Обработка POST запроса для каждого действия на страницах ------------------------
-
-
 @app.post("/role/inspector")
 def hande_inspector_action():
     violation_code = request.form["add_violation_code"]
